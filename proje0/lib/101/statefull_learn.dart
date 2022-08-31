@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proje0/product/language/language_items.dart';
+
+import '../product/counter_hello_button.dart';
 
 class StatefullLearn extends StatefulWidget {
   const StatefullLearn({Key? key}) : super(key: key);
@@ -9,7 +12,6 @@ class StatefullLearn extends StatefulWidget {
 
 class _StatefullLearnState extends State<StatefullLearn> {
   int _countValue = 0;
-  int _counterCustom = 0;
  
   void _updateCounter(bool inIcrement){
     if (inIcrement){
@@ -18,6 +20,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
     else{
       _countValue = _countValue - 1;
     }
+    //tek fonksiyon altında arttırma azaltma yapılabilir.
 
     setState(() {
       
@@ -29,12 +32,18 @@ class _StatefullLearnState extends State<StatefullLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text(LanguageItems.welcomeTitle),
+      //language_items.dart ' ta Stringler saklandı.
+      //gerektiğinde yeni dil eklendiğinde ya da textler değişmesi gerektiğinde language_items'ten güncellenecek.
+
+        
+      ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           _incrementButton(),
-          _deincrementButton(),
+          _deincrementButton(), 
+          //Extract Method ile burası sadeleştirildi. 
         ],
       ),
       body:  Column(
@@ -45,14 +54,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
               ),
             ),
           const Placeholder(),
-          ElevatedButton(
-            onPressed: (){
-              setState(() {
-                ++_counterCustom;
-              });
-            }, 
-            child: Text('Merhaba $_counterCustom'),
-            ), 
+          const CounterHelloButton(),  
         ],
       ),
     );
