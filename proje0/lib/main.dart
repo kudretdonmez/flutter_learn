@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'demos/stack_demo_view.dart';
+import '101/statefull_learn.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -18,14 +18,14 @@ class MyApp extends StatelessWidget {
       
       theme: ThemeData.dark().copyWith(
         listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
-        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.yellow),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.yellowAccent),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent, 
           elevation: 0,
         ),
       ),
       // 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home:  const StackDemoView(),
+      home:  const StatefullLearn(),
 
 
     );
