@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       
       theme: ThemeData.dark().copyWith(
         listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
-        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.amber),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.yellow),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent, 
           elevation: 0,
