@@ -116,12 +116,14 @@ class __ListDemoState extends State<_ListDemo> {
     print('hello');
   }
 
+  // GİRDİĞİ CHİLD'DA TETİKLEME YAPAR
   @override
   void dispose() {
     super.dispose();
     print('exit');
   }
 
+  // ÇIKTIĞI CHİLD'DA TETİKLEME YAPAR.
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
