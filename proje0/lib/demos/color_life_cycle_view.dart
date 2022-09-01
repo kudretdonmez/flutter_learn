@@ -38,7 +38,7 @@ class _ColorLifeCycleViewState extends State<ColorLifeCycleView> {
 
   void _changeBackground() {
     setState(() {
-      _backgroundColor = Colors.pink;
+      _backgroundColor = Colors.transparent;
     });
   }
 }
