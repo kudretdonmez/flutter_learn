@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '101/list_view_learn.dart';
+import 'demos/my_collections_demos.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const ListViewLearn(),
+      home: const MyCollectionsDemos(),
     );
   }
 }
