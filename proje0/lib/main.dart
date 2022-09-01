@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '101/text_field_learn.dart';
+import 'demos/color_life_cycle_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const TextFieldLearn(),
+      home: const ColorLifeCycleView(),
     );
   }
 }
