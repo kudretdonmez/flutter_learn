@@ -15,18 +15,19 @@ class TextLearnView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Welcome $name ${name.length}',
+              '$name ${name.length}', //* NAME.LENGTH = HARF SAYISI
               maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.right,
+              overflow: TextOverflow.fade,
+              textAlign: TextAlign.start,
               style: const TextStyle(
-                  wordSpacing: 2,
-                  decoration: TextDecoration.underline,
-                  fontStyle: FontStyle.italic,
-                  letterSpacing: 2,
-                  color: Colors.lime,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                wordSpacing: 5, //* KELİME ARASI BOŞLUK
+                decoration: TextDecoration.underline, //* YAZI ALTINA ÇİZGİ
+                fontStyle: FontStyle.italic,
+                letterSpacing: 5, //* HARF ARASI BOŞLUK
+                color: Colors.lime,
+                fontSize: 30,
+                fontWeight: FontWeight.w900, //* HARF KALINLIĞI
+              ),
               /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
               //en yanlış yöntem.
               //stillerin themedan yada classtan çekilmesi lazım.
@@ -48,7 +49,7 @@ class TextLearnView extends StatelessWidget {
 
               //en doğru olan yöntemdir theme'dan çekmek
               //fontu temadan çekebiliriz
-              //başka bir ayar çekmek için "copyWith()" kullanılacak
+              //* başka bir ayar çekmek için "copyWith()" kullanılacak
             ),
             Text(userName ?? 'sasda'),
             Text(keys.welcome),
@@ -68,7 +69,7 @@ class ProjectStyles {
     fontSize: 16,
     height: 2,
     color: Colors.deepOrange[100],
-    fontWeight: FontWeight.w100,
+    fontWeight: FontWeight.w900,
   );
 }
 
