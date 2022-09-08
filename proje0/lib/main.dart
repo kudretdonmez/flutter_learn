@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'demos/my_collections_demos.dart';
+import '101/statefull_life_cycle_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const MyCollectionsDemos(),
+      home: const StatefullLifeCycleLearn(message: 'KDRT'),
     );
   }
 }
