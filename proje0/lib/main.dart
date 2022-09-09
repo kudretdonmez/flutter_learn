@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '101/container_sized_box_learn.dart';
-=======
-import '101/statefull_life_cycle_learn.dart';
->>>>>>> 5dffd7697499992d7562de6f0df64ee48df5a071
+import '101/navigation_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,13 +29,9 @@ class MyApp extends StatelessWidget {
           border: OutlineInputBorder(),
         ),
       ),
-<<<<<<< HEAD
+
       //* 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: ContainerSizedBoxLearn(),
-=======
-      // 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const StatefullLifeCycleLearn(message: 'KDRT'),
->>>>>>> 5dffd7697499992d7562de6f0df64ee48df5a071
+      home: const NavigationLearn(),
     );
   }
 }
