@@ -9,24 +9,36 @@ class ScaffoldLearnView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Scaffold samples')),
+
+      //!-----------------------------------------------------------------------
+
       body: const Text('merhaba'),
       backgroundColor: const Color.fromARGB(255, 239, 11, 11),
       extendBody: true,
+
+      //!-----------------------------------------------------------------------
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //butona basıldığında alttan kayan bir container çıkar 
+          //*butona basıldığında alttan kayan bir container çıkar
           showModalBottomSheet(
               context: context,
               builder: (context) => Container(
-                    height: 200,
+                    height: 400,
                   ));
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       //action butonu konumunu belirler.
+
+      //!-----------------------------------------------------------------------
+
       drawer: const Drawer(),
       //sağ üst menü tuşu
       //tıklayınca yandan kayan menü çıkar.
+
+      //!-----------------------------------------------------------------------
+
       bottomNavigationBar: Container(
         height: 200,
         decoration: ProjectContainerDecoration(),
@@ -35,9 +47,11 @@ class ScaffoldLearnView extends StatelessWidget {
         child: BottomNavigationBar(items: const [
           BottomNavigationBarItem(icon: Icon(Icons.abc_outlined), label: 'a'),
           BottomNavigationBarItem(icon: Icon(Icons.abc_outlined), label: 'b'),
-        //aşağıdaki butonlar.
+          //aşağıdaki butonlar.
         ]),
       ),
+
+      //!-----------------------------------------------------------------------
     );
   }
 }

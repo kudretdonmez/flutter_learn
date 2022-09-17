@@ -9,24 +9,22 @@ class ColorLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          Container(color: ColorsItems.sulu, child: Text(
-            'DATA',
-            style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Theme.of(context).errorColor),
-          ) ,
-
-
+          Container(
+            color: ColorsItems.sulu,
+            child: Text(
+              'DATA',
+              style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Theme.of(context).errorColor),
+            ),
           ),
         ],
       ),
     );
-    
   }
 }
-class ColorsItems{
+
+//*-----------------------------------------------------------------------------
+class ColorsItems {
   static Color sunray = const Color(0xFFD9AE61);
 
   static Color sulu = const Color.fromRGBO(198, 237, 97, 1);
-
-
-
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '101/navigation_learn.dart';
+import '101/image_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          centerTitle: true,
         ),
         inputDecorationTheme: const InputDecorationTheme(
           filled: true,
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
 
       //* 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const NavigationLearn(),
+      home: const ImageLaern(),
     );
   }
 }

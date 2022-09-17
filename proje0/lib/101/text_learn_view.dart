@@ -6,6 +6,7 @@ class TextLearnView extends StatelessWidget {
   final String name = 'velii';
   final String? userName;
   final ProjectKeys keys = ProjectKeys();
+  //* metinleri ProjectKeys'ten alabiliriz.
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,8 @@ class TextLearnView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //!-------------------------------------------------------------------
+
             Text(
               '$name ${name.length}', //* NAME.LENGTH = HARF SAYISI
               maxLines: 2,
@@ -29,9 +32,12 @@ class TextLearnView extends StatelessWidget {
                 fontWeight: FontWeight.w900, //* HARF KALINLIĞI
               ),
               /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-              //en yanlış yöntem.
-              //stillerin themedan yada classtan çekilmesi lazım.
+              //! en yanlış yöntem.
+              //* stillerin themedan yada classtan çekilmesi lazım.
             ),
+
+            //!-------------------------------------------------------------------
+
             Text(
               'WELCOME CLASS oluşturma',
               maxLines: 3,
@@ -39,19 +45,32 @@ class TextLearnView extends StatelessWidget {
               textAlign: TextAlign.right,
               style: ProjectStyles.welcomeStyle,
             ),
+
+            //!-------------------------------------------------------------------
+
             Text(
-              'WELCOME THEME ',
+              'WEL' * 30,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.right,
-              style: Theme.of(context).textTheme.headline5?.copyWith(color: ProjectColors.welcomeColor),
+              //* ellipsis: metin taştığında 3 nokta ekler
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: ProjectColors.welcomeColor, backgroundColor: Colors.amber),
               //style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.amber),
 
-              //en doğru olan yöntemdir theme'dan çekmek
-              //fontu temadan çekebiliriz
+              //* en doğru olan yöntemdir theme'dan çekmek
+              //* fontu temadan çekebiliriz
               //* başka bir ayar çekmek için "copyWith()" kullanılacak
             ),
+
+            //!-----------------------------------------------------------------------
+
             Text(userName ?? 'sasda'),
+
+            //!-----------------------------------------------------------------------
+
             Text(keys.welcome),
           ],
         ),
@@ -60,6 +79,8 @@ class TextLearnView extends StatelessWidget {
   }
 }
 
+//*-----------------------------------------------------------------------------
+//* CLASSes
 class ProjectStyles {
   static TextStyle welcomeStyle = TextStyle(
     wordSpacing: 2,
@@ -73,9 +94,13 @@ class ProjectStyles {
   );
 }
 
+//*-----------------------------------------------------------------------------
+
 class ProjectColors {
   static Color welcomeColor = Colors.red;
 }
+
+//*-----------------------------------------------------------------------------
 
 class ProjectKeys {
   final String welcome = "Merhaba";

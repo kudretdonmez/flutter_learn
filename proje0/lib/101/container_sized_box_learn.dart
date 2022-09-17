@@ -11,16 +11,24 @@ class ContainerSizedBoxLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
+          //!-----------------------------------------------------------------------
+
           SizedBox(
             width: 300,
-            height: 200,
+            height: 25,
             child: Text('a' * 600),
           ),
+
+          //!-----------------------------------------------------------------------
+
           //const SizedBox.shrink(),
-          SizedBox.square(dimension: 120, child: Text('b' * 500)),
+          SizedBox.square(dimension: 50, child: Text('b' * 500)),
+
+          //!-----------------------------------------------------------------------
+
           Container(
-            constraints:
-                const BoxConstraints(maxWidth: 300, minWidth: 100, minHeight: 10, maxHeight: 140), //*kısıtlamalar
+            //* kısıtlamalar
+            constraints: const BoxConstraints(maxWidth: 300, minWidth: 100, minHeight: 10, maxHeight: 200),
             child: Text('aa' * 100, maxLines: 1),
             padding: const EdgeInsets.all(20),
             //içeriden boşluk verir
@@ -28,6 +36,8 @@ class ContainerSizedBoxLearn extends StatelessWidget {
             //dışarıdan boşluk verir
             decoration: ProjectUtility.boxDecoration,
           )
+
+          //!-----------------------------------------------------------------------
         ],
       ),
     );
