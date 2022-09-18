@@ -10,6 +10,7 @@ class CustomWidgetLearn extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          //!-------------------------------------------------------------------
           Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -17,22 +18,28 @@ class CustomWidgetLearn extends StatelessWidget {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: CustomFoodButton(
-                    title: title, onPressed: () {},
+                    title: title,
+                    onPressed: () {},
                   ),
                 ),
               ),
             ),
           ),
+
+          //!-------------------------------------------------------------------
           const SizedBox(height: 100),
           CustomFoodButton(
             title: title,
-            onPressed: (){},
+            onPressed: () {},
           ),
+          //!-------------------------------------------------------------------
         ],
       ),
     );
   }
 }
+
+//?-----------------------------------------------------------------------------
 
 class _ColorUtility {
   final Color redColor = Colors.red;
@@ -44,6 +51,8 @@ class _PaddingUtility {
   final EdgeInsets normal2xPadding = const EdgeInsets.all(16.0);
 }
 
+//?-----------------------------------------------------------------------------
+
 class CustomFoodButton extends StatelessWidget with _ColorUtility, _PaddingUtility {
   CustomFoodButton({Key? key, required this.title, required this.onPressed}) : super(key: key);
   final String title;
@@ -52,16 +61,15 @@ class CustomFoodButton extends StatelessWidget with _ColorUtility, _PaddingUtili
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          primary: redColor, shape: const StadiumBorder()),
+        primary: redColor,
+        shape: const StadiumBorder(),
+      ),
       onPressed: onPressed,
       child: Padding(
         padding: normalPadding,
         child: Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .subtitle2
-              ?.copyWith(color: whiteColor, fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(color: whiteColor, fontWeight: FontWeight.bold),
         ),
       ),
     );

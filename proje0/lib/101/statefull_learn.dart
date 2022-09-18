@@ -12,63 +12,66 @@ class StatefullLearn extends StatefulWidget {
 
 class _StatefullLearnState extends State<StatefullLearn> {
   int _countValue = 0;
- 
-  void _updateCounter(bool inIcrement){
-    if (inIcrement){
+
+  void _updateCounter(bool inIcrement) {
+    if (inIcrement) {
       _countValue = _countValue + 1;
-    }
-    else{
+    } else {
       _countValue = _countValue - 1;
     }
-    //tek fonksiyon altında arttırma azaltma yapılabilir.
+    //* tek fonksiyon altında arttırma azaltma yapılabilir.
 
-    setState(() {
-      
-    });
-
+    setState(() {});
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(LanguageItems.welcomeTitle),
-      //language_items.dart ' ta Stringler saklandı.
-      //gerektiğinde yeni dil eklendiğinde ya da textler değişmesi gerektiğinde language_items'ten güncellenecek.
-
-        
+      appBar: AppBar(
+        title: const Text(LanguageItems.welcomeTitle),
+        //* language_items.dart ' ta Stringler saklandı.
+        //* gerektiğinde yeni dil eklendiğinde ya da textler değişmesi gerektiğinde language_items'ten güncellenecek.
       ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           _incrementButton(),
-          _deincrementButton(), 
-          //Extract Method ile burası sadeleştirildi. 
+          _deincrementButton(),
+          //* Extract Method ile burası sadeleştirildi.
         ],
       ),
-      body:  Column(
+      body: Column(
         children: [
-          Center(child: Text(
-            _countValue.toString(),
-            style: Theme.of(context).textTheme.headline2,
-              ),
+          //!---------------------------------------------------------------------------
+
+          Center(
+            child: Text(
+              _countValue.toString(),
+              style: Theme.of(context).textTheme.headline2,
             ),
+          ),
           const Placeholder(),
-          const CounterHelloButton(),  
+
+          //!---------------------------------------------------------------------------
+
+          const CounterHelloButton(),
         ],
       ),
     );
   }
+
+  //?---------------------------------------------------------------------------
 
   FloatingActionButton _incrementButton() {
     return FloatingActionButton(
       onPressed: () {
         _updateCounter(true);
-
       },
       child: const Icon(Icons.add),
     );
   }
+
+  //?---------------------------------------------------------------------------
 
   Padding _deincrementButton() {
     return Padding(
@@ -81,4 +84,5 @@ class _StatefullLearnState extends State<StatefullLearn> {
       ),
     );
   }
+  //?---------------------------------------------------------------------------
 }

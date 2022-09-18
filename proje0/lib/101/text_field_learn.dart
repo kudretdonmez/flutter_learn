@@ -19,9 +19,11 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
       appBar: AppBar(),
       body: Column(
         children: [
+          //!-------------------------------------------------------------------
+
           TextField(
             maxLength: 20,
-            //KARAKTER SINIRLAMASI KOYAR.
+            //* KARAKTER SINIRLAMASI KOYAR.
             buildCounter: (BuildContext context, {int? currentLength, bool? isFocused, int? maxLength}) {
               return AnimatedContainer(
                 duration: const Duration(seconds: 1),
@@ -31,21 +33,24 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
               );
             },
             keyboardType: TextInputType.emailAddress,
-            //KLAVYE MAİL TİPİNDE AÇILIR
+            //* KLAVYE MAİL TİPİNDE AÇILIR
 
             autofillHints: const [AutofillHints.email],
-            // klavyede @ işaretinde auto doldurma gelir. gmail outlook gibi
+            //* klavyede @ işaretinde auto doldurma gelir. gmail outlook gibi
 
             inputFormatters: [TextProjectInputFormmater()._formmatter],
-            // İSTEDİĞİMİZ BİR KARAKTERİN YAZILMASINI ENGELLEMEK İÇİN KULLANILIR.
+            //* İSTEDİĞİMİZ BİR KARAKTERİN YAZILMASINI ENGELLEMEK İÇİN KULLANILIR.
 
             textInputAction: TextInputAction.next,
-            //KLAVYEYE İLERİ BUTONU EKLER. TIKLAYINCA ALT SEKMEYE GEÇER.
+            //* KLAVYEYE İLERİ BUTONU EKLER. TIKLAYINCA ALT SEKMEYE GEÇER.
 
             focusNode: focusTextFieldOne,
 
             decoration: _InputDecorator().emailInput,
           ),
+
+          //!-------------------------------------------------------------------
+
           TextField(
             focusNode: focusTextFieldTwo,
             minLines: 1,
@@ -55,7 +60,9 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
               border: OutlineInputBorder(),
               labelText: 'Phone',
             ),
-          )
+          ),
+
+          //!-------------------------------------------------------------------
         ],
       ),
     );
@@ -69,6 +76,7 @@ class TextProjectInputFormmater {
     }
     return newValue;
   });
+  //? BU KOD İLE KÜÇÜK A HARFİ YAZILAMAZ
 }
 
 class _InputDecorator {

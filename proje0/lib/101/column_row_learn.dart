@@ -9,6 +9,8 @@ class ColumnRowLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
+          //!-------------------------------------------------------------------
+
           Expanded(
             flex: 4,
             child: Row(
@@ -33,8 +35,10 @@ class ColumnRowLearn extends StatelessWidget {
             ),
           ),
 
+          //!-------------------------------------------------------------------
+
           const Spacer(),
-          //EXPAND EDİLMİŞ BOŞ ROW GİBİ DAVRANIR. BOŞ YER AÇAR.
+          //* EXPAND EDİLMİŞ BOŞ ROW GİBİ DAVRANIR. BOŞ YER AÇAR.
 
           Expanded(
             flex: 2,
@@ -52,12 +56,12 @@ class ColumnRowLearn extends StatelessWidget {
               ],
             ),
           ),
-          //4 + 2 + 2 + 2 = 10
-          //flex İLE ORANLAMA YAPARAK EKRANDA CONTAİNER'IN NE KADAR YER KAPLAYACAĞI BELİRLENİR.
+
+          //!-------------------------------------------------------------------
 
           SizedBox(
             height: ProjectContainerSizes.cardHeight,
-            //ÖNCE 200 KADAR YERİ ALIR. GERİ KALANI DİĞERLERİNE BIRAKIR.
+            //* ÖNCE 200 KADAR YERİ ALIR. GERİ KALANI DİĞERLERİNE BIRAKIR.
             child: Column(
               children: const [
                 Expanded(child: Text('data')),
@@ -67,6 +71,10 @@ class ColumnRowLearn extends StatelessWidget {
               ],
             ),
           ),
+
+          //!-------------------------------------------------------------------
+          //* 4 + 2 + 2 + 2 = 10
+          //* flex İLE ORANLAMA YAPARAK EKRANDA CONTAİNER'IN NE KADAR YER KAPLAYACAĞI BELİRLENİR.
         ],
       ),
     );

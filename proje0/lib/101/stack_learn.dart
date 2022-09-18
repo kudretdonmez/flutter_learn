@@ -13,13 +13,19 @@ class StackLearn extends StatelessWidget {
             color: Colors.red,
             height: 100,
           ),
+
+          //!-------------------------------------------------------------------
+
           Padding(
-            padding: const EdgeInsets.only(top:50),
+            padding: const EdgeInsets.only(top: 50),
             child: Container(
               color: Colors.blue,
               height: 100,
             ),
           ),
+
+          //!-------------------------------------------------------------------
+
           Positioned(
             right: 20,
             left: 20,
@@ -30,15 +36,10 @@ class StackLearn extends StatelessWidget {
               height: 200,
             ),
           ),
-
         ],
-
       ),
-    
-    // HER ZAMAN SONRADAN YAZILAN ÜSTTE OLUR.
 
-
-
+      //* HER ZAMAN SONRADAN YAZILAN ÜSTTE OLUR.
     );
   }
 }

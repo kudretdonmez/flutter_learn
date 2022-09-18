@@ -11,7 +11,7 @@ class PageViewLearn extends StatefulWidget {
 }
 
 class _PageViewLearnState extends State<PageViewLearn> {
-  final _pageController = PageController(viewportFraction: 0.9);
+  final _pageController = PageController(viewportFraction: 1);
 
   int _currentPageIndex = 0;
 
@@ -27,17 +27,25 @@ class _PageViewLearnState extends State<PageViewLearn> {
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          //!-------------------------------------------------------------------
+
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Text(_currentPageIndex.toString()),
           ),
           const Spacer(),
+
+          //!-------------------------------------------------------------------
+
           FloatingActionButton(
             onPressed: () {
               _pageController.previousPage(duration: _DurationUtility._durationLow, curve: Curves.slowMiddle);
             },
             child: const Icon(Icons.chevron_left),
           ),
+
+          //!-------------------------------------------------------------------
+
           FloatingActionButton(
             onPressed: () {
               _pageController.nextPage(duration: _DurationUtility._durationLow, curve: Curves.slowMiddle);
@@ -46,13 +54,16 @@ class _PageViewLearnState extends State<PageViewLearn> {
           ),
         ],
       ),
+
+      //!-------------------------------------------------------------------
+
       appBar: AppBar(),
       body: PageView(
-        // YANA KARDIRMALI SAYFALAR OLUŞTURU. ÇOK KULLANIŞLIDIR.
+        //* YANA KARDIRMALI SAYFALAR OLUŞTURU. ÇOK KULLANIŞLIDIR.
         padEnds: false,
-        // false iken sayfa başlangıçtan başlar. true iken sola boşluklı olur.
+        //* false iken sayfa başlangıçtan başlar. true iken sola boşluklı olur.
         controller: _pageController,
-        // SAYFALARI ORANA KÜÇÜLTÜP. DİĞER SAYFALARI UCUNDAN GÖSTERİR.
+        //* SAYFALARI ORANA KÜÇÜLTÜP. DİĞER SAYFALARI UCUNDAN GÖSTERİR.
         onPageChanged: _updatePageIndex,
         children: [
           const ImageLaern(),
@@ -68,5 +79,5 @@ class _PageViewLearnState extends State<PageViewLearn> {
 }
 
 class _DurationUtility {
-  static const _durationLow = Duration(seconds: 1);
+  static const _durationLow = Duration(microseconds: 100);
 }
