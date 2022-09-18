@@ -23,7 +23,7 @@ class _NavigateDetailLearnDartState extends State<NavigateDetailLearnDart> {
         child: ElevatedButton.icon(
             onPressed: () {
               Navigator.of(context).pop(!widget.isOkey);
-              // SAYFADAN TRUE İSTENDİĞİ İÇİN YOLLAR
+              //* SAYFADAN TRUE İSTENDİĞİ İÇİN YOLLAR
             },
             icon: Icon(Icons.check, color: widget.isOkey ? Colors.red : Colors.green),
             label: widget.isOkey ? const Text('RED') : const Text('ONAYLA')),

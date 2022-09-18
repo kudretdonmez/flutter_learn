@@ -12,7 +12,9 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      //*
+
+      //!-----------------------------------------------------------------------
+
       body: ListView.separated(
         separatorBuilder: (context, index) {
           return const Divider(
@@ -33,6 +35,8 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
         },
         itemCount: 15,
       ),
+
+      //!-----------------------------------------------------------------------
     );
   }
 }

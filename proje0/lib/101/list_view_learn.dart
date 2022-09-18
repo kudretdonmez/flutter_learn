@@ -13,25 +13,29 @@ class _ListDemoLearnState extends State<ListViewLearn> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView(
-// LISTVIEW İLE DİKEYDE SONSUZ YÜKSEKSİK ELDE EDİLEBİLİR.
-// AŞAĞI KAYAN SAYFA OLUŞTURULUR.
+//* LISTVIEW İLE DİKEYDE SONSUZ YÜKSEKSİK ELDE EDİLEBİLİR.
+//* AŞAĞI KAYAN SAYFA OLUŞTURULUR.
         padding: EdgeInsets.zero,
         children: [
+          //* yazıların tam oturması için
           FittedBox(
             child: Text(
               'MERHABA',
               style: Theme.of(context).textTheme.headline1,
               maxLines: 1,
-              //maxLines ile yazıya satır sınırlaması getirilebilir.
-              //AMA YAZI YATAY OLARAK TAŞABİLİR
-              //O ZAMAN FITTEDBOX KULLANILIR.
+              //* maxLines ile yazıya satır sınırlaması getirilebilir.
+              //* AMA YAZI YATAY OLARAK TAŞABİLİR
+              //* O ZAMAN FITTEDBOX KULLANILIR.
             ),
           ),
+
+          //!-------------------------------------------------------------------
           Container(
             color: Colors.red,
             height: 300,
           ),
           const Divider(),
+          //!-------------------------------------------------------------------
           SizedBox(
             height: 300,
             child: ListView(
@@ -52,10 +56,12 @@ class _ListDemoLearnState extends State<ListViewLearn> {
               ],
             ),
           ),
+          //!-------------------------------------------------------------------
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.close),
           ),
+          //!-------------------------------------------------------------------
           FittedBox(
             child: Text(
               'MERHABA',
@@ -66,11 +72,13 @@ class _ListDemoLearnState extends State<ListViewLearn> {
               //O ZAMAN FITTEDBOX KULLANILIR.
             ),
           ),
+          //!-------------------------------------------------------------------
           Container(
             color: Colors.red,
             height: 300,
           ),
           const Divider(),
+          //!-------------------------------------------------------------------
           SizedBox(
             height: 300,
             child: ListView(
@@ -91,6 +99,9 @@ class _ListDemoLearnState extends State<ListViewLearn> {
               ],
             ),
           ),
+
+          //!-------------------------------------------------------------------
+
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.close),
@@ -115,15 +126,15 @@ class __ListDemoState extends State<_ListDemo> {
     super.initState();
     print('hello');
   }
+//* GİRDİĞİ CHİLD'DA TETİKLEME YAPAR
 
-  // GİRDİĞİ CHİLD'DA TETİKLEME YAPAR
   @override
   void dispose() {
     super.dispose();
     print('exit');
   }
+//* ÇIKTIĞI CHİLD'DA TETİKLEME YAPAR.
 
-  // ÇIKTIĞI CHİLD'DA TETİKLEME YAPAR.
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
