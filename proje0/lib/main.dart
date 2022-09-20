@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '101/navigation_learn.dart';
+import '202/service/service_learn_get_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +16,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData.dark().copyWith(
+        //!-----TAB_BAR---------------------------------------------------------
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.white,
+          //indicatorSize: TabBarIndicatorSize.label,
+          unselectedLabelColor: Colors.green,
+        ),
+        //!---------------------------------------------------------------------
         listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
         progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.yellowAccent),
         appBarTheme: const AppBarTheme(
@@ -32,7 +39,7 @@ class MyApp extends StatelessWidget {
       ),
 
       //* 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const NavigationLearn(),
+      home: const ServiceLearn(),
     );
   }
 }
