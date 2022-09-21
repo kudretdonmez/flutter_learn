@@ -17,7 +17,8 @@ class _PackageLearnViewState extends State<PackageLearnView> {
     return Scaffold(
       appBar: AppBar(),
       body: const LoadingBar(),
-      floatingActionButton: const FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).buttonTheme.colorScheme?.onPrimary,
         onPressed: _launchUrl,
       ),
     );
