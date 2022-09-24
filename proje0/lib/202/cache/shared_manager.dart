@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared_not_initialize.dart';
 
-enum SharedKeys { counter }
+enum SharedKeys { counter, users }
 
 class SharedManager {
   SharedPreferences? preferences;

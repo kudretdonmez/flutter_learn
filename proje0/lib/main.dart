@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proje0/theme/light_theme.dart';
-import '202/cache/shared_learn_cache.dart';
+import '202/cache/secure_context/secure_context_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       // ),
 
       //* 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const SharedLearn(),
+      home: const ShareContextLearn(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proje0/202/cache/shared_manager.dart';
+import 'package:proje0/202/cache/user_model.dart';
 
 class SharedLearn extends StatefulWidget {
   const SharedLearn({super.key});
@@ -22,9 +23,9 @@ class _SharedLearnState extends LoadingStateful<SharedLearn> {
   }
 
   Future<void> _initialize() async {
-    _changeLoading();
+    changeLoading();
     await _manager.init();
-    _changeLoading();
+    changeLoading();
     getDefaultValues();
   }
 
@@ -67,9 +68,6 @@ class _SharedLearnState extends LoadingStateful<SharedLearn> {
               _onChangeValue(value);
             },
           ),
-          Expanded(
-            child: _UserListView(),
-          ),
         ],
       ),
     );
@@ -89,9 +87,9 @@ class _SharedLearnState extends LoadingStateful<SharedLearn> {
     return FloatingActionButton(
       child: const Icon(Icons.save),
       onPressed: () async {
-        _changeLoading();
+        changeLoading();
         _manager.saveString(SharedKeys.counter, _currentValue.toString());
-        _changeLoading();
+        changeLoading();
       },
     );
   }
@@ -100,49 +98,11 @@ class _SharedLearnState extends LoadingStateful<SharedLearn> {
     return FloatingActionButton(
       child: const Icon(Icons.delete),
       onPressed: () async {
-        _changeLoading();
+        changeLoading();
         await _manager.removeItem(SharedKeys.counter);
-        _changeLoading();
+        changeLoading();
       },
     );
-  }
-}
-
-class _UserListView extends StatelessWidget {
-  _UserListView({
-    Key? key,
-  }) : super(key: key);
-  final List<User> users = UserItems().users;
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: users.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Card(
-          child: ListTile(
-            title: Text(users[index].name),
-            subtitle: Text(users[index].description),
-            trailing: Text(users[index].url),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class User {
-  final String name;
-  final String description;
-  final String url;
-
-  User(this.name, this.description, this.url);
-
-  static List? fromJson(Map<String, dynamic> json) {
-    return null;
-  }
-
-  Object? toJson() {
-    return null;
   }
 }
 
@@ -160,7 +120,7 @@ class UserItems {
 abstract class LoadingStateful<T extends StatefulWidget> extends State<T> {
   bool isLoading = false;
 
-  void _changeLoading() {
+  void changeLoading() {
     setState(() {
       isLoading = !isLoading;
     });
