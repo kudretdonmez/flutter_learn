@@ -1,9 +1,11 @@
+//* 001- text_learn_view.dart #2
+
 import 'package:flutter/material.dart';
 
 class TextLearnView extends StatelessWidget {
   TextLearnView({Key? key, this.userName}) : super(key: key);
 
-  final String name = 'velii';
+  final String name = 'KUDRETDONMEZ';
   final String? userName;
   final ProjectKeys keys = ProjectKeys();
   //* metinleri ProjectKeys'ten alabiliriz.
@@ -28,7 +30,7 @@ class TextLearnView extends StatelessWidget {
                 fontStyle: FontStyle.italic,
                 letterSpacing: 5, //* HARF ARASI BOŞLUK
                 color: Colors.lime,
-                fontSize: 30,
+                fontSize: 12,
                 fontWeight: FontWeight.w900, //* HARF KALINLIĞI
               ),
               /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -39,7 +41,7 @@ class TextLearnView extends StatelessWidget {
             //!-------------------------------------------------------------------
 
             Text(
-              'WELCOME CLASS oluşturma',
+              'WELCOME CLASS oluşturma<<' * 4,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.right,
@@ -56,8 +58,8 @@ class TextLearnView extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline6
-                  ?.copyWith(color: ProjectColors.welcomeColor, backgroundColor: Colors.amber),
+                  .headline5
+                  ?.copyWith(color: ProjectColors.textColor, backgroundColor: ProjectColors.backColor),
               //style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.amber),
 
               //* en doğru olan yöntemdir theme'dan çekmek
@@ -67,7 +69,8 @@ class TextLearnView extends StatelessWidget {
 
             //!-----------------------------------------------------------------------
 
-            Text(userName ?? 'sasda'),
+            Text(userName ?? 'sasdaFFFdsdfs'),
+            //* ?? null check demektir. Eğer userName null gelirse sağdaki değer atanır.
 
             //!-----------------------------------------------------------------------
 
@@ -83,13 +86,13 @@ class TextLearnView extends StatelessWidget {
 //* CLASSes
 class ProjectStyles {
   static TextStyle welcomeStyle = TextStyle(
-    wordSpacing: 2,
+    wordSpacing: 5,
     letterSpacing: 2,
     decoration: TextDecoration.underline,
-    fontStyle: FontStyle.italic,
-    fontSize: 16,
+    fontStyle: FontStyle.normal,
+    fontSize: 15,
     height: 2,
-    color: Colors.deepOrange[100],
+    color: Colors.deepOrange[600],
     fontWeight: FontWeight.w900,
   );
 }
@@ -97,7 +100,8 @@ class ProjectStyles {
 //*-----------------------------------------------------------------------------
 
 class ProjectColors {
-  static Color welcomeColor = Colors.red;
+  static Color backColor = const Color.fromARGB(255, 243, 164, 62);
+  static Color textColor = Colors.blue;
 }
 
 //*-----------------------------------------------------------------------------
