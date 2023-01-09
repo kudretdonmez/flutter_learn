@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '101/container_sized_box_learn.dart';
+import '101/scaffold_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
           ),
 
       //* 101 deki .dart dosyalarına bağlanmak için aşağısını değiştiriyoruz.
-      home: const ContainerSizedBoxLearn(),
+      home: const ScaffoldLearnView(),
     );
   }
 }
